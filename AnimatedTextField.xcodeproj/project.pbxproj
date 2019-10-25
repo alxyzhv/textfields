@@ -19,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		EB054D77235E5F0700E0D87F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		EB29708B23636ABB008DC24E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EB29708D23636BED008DC24E /* Screenshot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Screenshot.gif; sourceTree = "<group>"; };
 		EB5E5D8F23591BCA008B55D6 /* AnimatedTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimatedTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5E5D9223591BCA008B55D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB5E5D9623591BCA008B55D6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -42,11 +44,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB29708C23636B29008DC24E /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				EB29708D23636BED008DC24E /* Screenshot.gif */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		EB5E5D8623591BCA008B55D6 = {
 			isa = PBXGroup;
 			children = (
 				EBEB3D5D23591E2D0087ED46 /* .gitignore */,
+				EB29708B23636ABB008DC24E /* README.md */,
 				EB5E5D9123591BCA008B55D6 /* AnimatedTextField */,
+				EB29708C23636B29008DC24E /* Demo */,
 				EB5E5D9023591BCA008B55D6 /* Products */,
 			);
 			sourceTree = "<group>";
