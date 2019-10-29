@@ -26,11 +26,11 @@ final class SloyTextField: UITextField {
     // MARK: - Private Properties
 
     private var labelHeight: CGFloat {
-        floor(font?.withSize(Constants.placeholderSize).lineHeight ?? 0)
+        ceil(font?.withSize(Constants.placeholderSize).lineHeight ?? 0)
     }
 
     private var textHeight: CGFloat {
-        floor(font?.lineHeight ?? 0)
+        ceil(font?.lineHeight ?? 0)
     }
 
     private var isEmpty: Bool {
