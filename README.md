@@ -1,6 +1,6 @@
-## Два кастомных UITextField
+## Animate placeholders in UITextField
 
-- [SloyTextField](AnimatedTextField/Library/Reusable/SloyTextField.swift) с анимацией как в приложении Sloy
-- [FloatingTextField](AnimatedTextField/Library/Reusable/FloatingTextField.swift) с анимацией плейсхолдера в стиле Material Design
+- [SloyTextField](AnimatedTextField/Library/Reusable/SloyTextField.swift) animation as in Sloy application
+- [FloatingTextField](AnimatedTextField/Library/Reusable/FloatingTextField.swift) Material Design style animation
 
 ![Screenshot](Demo/Screenshot.gif?raw=true)
