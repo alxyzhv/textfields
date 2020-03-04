@@ -18,9 +18,8 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        setupUI()
     }
-
 }
 
 // MARK: - Actions
@@ -31,20 +30,18 @@ private extension MainViewController {
     func tapGesture() {
         view.endEditing(true)
     }
-
 }
 
-// MARK: - Private Configuration
+// MARK: - Private Setup
 
 private extension MainViewController {
 
-    func configure() {
-        configureTapGesture()
+    func setupUI() {
+        setupTapGesture()
     }
 
-    func configureTapGesture() {
+    func setupTapGesture() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
         view.addGestureRecognizer(tapGestureRecognizer)
     }
-
 }
