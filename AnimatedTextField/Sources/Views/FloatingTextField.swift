@@ -8,15 +8,20 @@
 
 import UIKit
 
+private extension TimeInterval {
+    static let animation250ms: TimeInterval = 0.25
+}
+
+private extension UIColor {
+    static let inactive: UIColor = .gray
+}
+
+private enum Constants {
+    static let offset: CGFloat = 8
+    static let placeholderSize: CGFloat = 14
+}
+
 final class FloatingTextField: UITextField {
-
-    // MARK: - Constants
-
-    private enum Constants {
-        static let duration: TimeInterval = 0.25
-        static let offset: CGFloat = 8
-        static let placeholderSize: CGFloat = 14
-    }
 
     // MARK: - Subviews
 
@@ -45,23 +50,20 @@ final class FloatingTextField: UITextField {
         text?.isEmpty ?? true
     }
 
-    private lazy var textInsets = UIEdgeInsets(
-        top: Constants.offset + labelHeight,
-        left: 0,
-        bottom: Constants.offset,
-        right: 0
-    )
+    private var textInsets: UIEdgeInsets {
+        UIEdgeInsets(top: Constants.offset + labelHeight, left: 0, bottom: Constants.offset, right: 0)
+    }
 
     // MARK: - Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        setupUI()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configure()
+        setupUI()
     }
 
     // MARK: - UITextField
@@ -107,14 +109,14 @@ final class FloatingTextField: UITextField {
 
     // MARK: - Private Methods
 
-    private func configure() {
+    private func setupUI() {
         borderStyle = .none
 
-        border.backgroundColor = .gray
+        border.backgroundColor = .inactive
         border.isUserInteractionEnabled = false
         addSubview(border)
 
-        label.textColor = .gray
+        label.textColor = .inactive
         label.font = font
         label.text = placeholder
         label.isUserInteractionEnabled = false
@@ -130,8 +132,8 @@ final class FloatingTextField: UITextField {
     }
 
     private func updateBorder() {
-        let borderColor = isFirstResponder ? tintColor : .gray
-        UIView.animate(withDuration: Constants.duration) {
+        let borderColor = isFirstResponder ? tintColor : .inactive
+        UIView.animate(withDuration: .animation250ms) {
             self.border.backgroundColor = borderColor
         }
     }
@@ -150,7 +152,7 @@ final class FloatingTextField: UITextField {
             return
         }
 
-        UIView.animate(withDuration: Constants.duration) {
+        UIView.animate(withDuration: .animation250ms) {
             self.label.transform = isActive ? transform : .identity
         }
     }
