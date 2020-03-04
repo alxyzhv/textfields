@@ -8,20 +8,25 @@
 
 import UIKit
 
+private extension TimeInterval {
+    static let animation250ms: TimeInterval = 0.25
+}
+
+private extension UIColor {
+    static let inactive: UIColor = .gray
+}
+
+private enum Constants {
+    static let offset: CGFloat = 8
+    static let placeholderSize: CGFloat = 14
+}
+
 final class SloyTextField: UITextField {
-
-    // MARK: - Constants
-
-    private enum Constants {
-        static let duration: TimeInterval = 0.25
-        static let offset: CGFloat = 8
-        static let placeholderSize: CGFloat = 14
-    }
 
     // MARK: - Subviews
 
-    private var border = UIView()
-    private var label = UILabel()
+    private let border = UIView()
+    private let label = UILabel()
 
     // MARK: - Private Properties
 
@@ -37,23 +42,20 @@ final class SloyTextField: UITextField {
         text?.isEmpty ?? true
     }
 
-    private lazy var textInsets = UIEdgeInsets(
-        top: Constants.offset + labelHeight,
-        left: 0,
-        bottom: Constants.offset,
-        right: 0
-    )
+    private var textInsets: UIEdgeInsets {
+        UIEdgeInsets(top: Constants.offset + labelHeight, left: 0, bottom: Constants.offset, right: 0)
+    }
 
     // MARK: - Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        setupUI()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configure()
+        setupUI()
     }
 
     // MARK: - UITextField
@@ -72,13 +74,9 @@ final class SloyTextField: UITextField {
         didSet {
             label.text = placeholder
             attributedPlaceholder = NSAttributedString(string: placeholder ?? "", attributes: [
-                NSAttributedString.Key.foregroundColor: UIColor.gray
+                NSAttributedString.Key.foregroundColor: UIColor.inactive
             ])
         }
-    }
-
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: textInsets)
     }
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -89,23 +87,27 @@ final class SloyTextField: UITextField {
         return bounds.inset(by: textInsets)
     }
 
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: textInsets)
+    }
+
     // MARK: - Private Methods
 
-    private func configure() {
+    private func setupUI() {
         borderStyle = .none
 
-        border.backgroundColor = .gray
+        border.backgroundColor = .inactive
         border.isUserInteractionEnabled = false
         addSubview(border)
 
-        label.textColor = .gray
+        label.textColor = .inactive
         label.font = font?.withSize(Constants.placeholderSize)
         label.text = placeholder
         label.isUserInteractionEnabled = false
         addSubview(label)
 
         attributedPlaceholder = NSAttributedString(string: placeholder ?? "", attributes: [
-            NSAttributedString.Key.foregroundColor: UIColor.gray
+            NSAttributedString.Key.foregroundColor: UIColor.inactive
         ])
 
         addTarget(self, action: #selector(handleEditing), for: .allEditingEvents)
@@ -118,8 +120,8 @@ final class SloyTextField: UITextField {
     }
 
     private func updateBorder() {
-        let borderColor = isFirstResponder ? tintColor : .gray
-        UIView.animate(withDuration: Constants.duration) {
+        let borderColor = isFirstResponder ? tintColor : .inactive
+        UIView.animate(withDuration: .animation250ms) {
             self.border.backgroundColor = borderColor
         }
     }
@@ -135,7 +137,7 @@ final class SloyTextField: UITextField {
             return
         }
 
-        UIView.animate(withDuration: Constants.duration) {
+        UIView.animate(withDuration: .animation250ms) {
             self.label.frame = labelFrame
             self.label.alpha = alpha
         }
