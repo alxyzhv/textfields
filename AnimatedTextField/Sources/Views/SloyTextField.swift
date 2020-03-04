@@ -140,5 +140,4 @@ final class SloyTextField: UITextField {
             self.label.alpha = alpha
         }
     }
-
 }

@@ -154,5 +154,4 @@ final class FloatingTextField: UITextField {
             self.label.transform = isActive ? transform : .identity
         }
     }
-
 }
