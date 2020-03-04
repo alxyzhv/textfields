@@ -44,6 +44,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB0DBBFC24102FB200AACDED /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EB0DBBFE24102FF600AACDED /* Extensions */,
+				EB0DBC002410304600AACDED /* Views */,
+				EB5E5D9223591BCA008B55D6 /* AppDelegate.swift */,
+				EBEB3D6223591EBD0087ED46 /* MainViewController.storyboard */,
+				EB5E5D9623591BCA008B55D6 /* MainViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EB0DBBFD24102FB900AACDED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E5DA023591BCB008B55D6 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB0DBBFE24102FF600AACDED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB0DBBFF24102FFF00AACDED /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB0DBBFF24102FFF00AACDED /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				EBEB3D6023591E940087ED46 /* UIStoryboard.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		EB0DBC002410304600AACDED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB054D77235E5F0700E0D87F /* FloatingTextField.swift */,
+				EB85BBED235C775300579E97 /* SloyTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EB29708C23636B29008DC24E /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,29 +119,18 @@
 		EB5E5D9123591BCA008B55D6 /* AnimatedTextField */ = {
 			isa = PBXGroup;
 			children = (
-				EB5E5DA623591BD3008B55D6 /* Application */,
-				EB5E5DA923591D59008B55D6 /* Library */,
 				EB5E5DA723591CC4008B55D6 /* Resources */,
-				EB5E5D9623591BCA008B55D6 /* MainViewController.swift */,
-				EBEB3D6223591EBD0087ED46 /* MainViewController.storyboard */,
+				EB0DBBFC24102FB200AACDED /* Sources */,
+				EB0DBBFD24102FB900AACDED /* Supporting Files */,
 			);
 			path = AnimatedTextField;
-			sourceTree = "<group>";
-		};
-		EB5E5DA623591BD3008B55D6 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				EB5E5D9223591BCA008B55D6 /* AppDelegate.swift */,
-				EB5E5DA023591BCB008B55D6 /* Info.plist */,
-				EB5E5D9D23591BCB008B55D6 /* LaunchScreen.storyboard */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		EB5E5DA723591CC4008B55D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				EB5E5DA823591CCC008B55D6 /* Images */,
+				EB5E5D9D23591BCB008B55D6 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -107,40 +141,6 @@
 				EB5E5D9B23591BCB008B55D6 /* Assets.xcassets */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		EB5E5DA923591D59008B55D6 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				EBEB3D5E23591E7F0087ED46 /* Extensions */,
-				EB5E5DAA23591D62008B55D6 /* Reusable */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		EB5E5DAA23591D62008B55D6 /* Reusable */ = {
-			isa = PBXGroup;
-			children = (
-				EB85BBED235C775300579E97 /* SloyTextField.swift */,
-				EB054D77235E5F0700E0D87F /* FloatingTextField.swift */,
-			);
-			path = Reusable;
-			sourceTree = "<group>";
-		};
-		EBEB3D5E23591E7F0087ED46 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				EBEB3D5F23591E870087ED46 /* UIKit */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		EBEB3D5F23591E870087ED46 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				EBEB3D6023591E940087ED46 /* UIStoryboard.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +358,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9M4UA5L8Z;
-				INFOPLIST_FILE = AnimatedTextField/Application/Info.plist;
+				INFOPLIST_FILE = "AnimatedTextField/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,7 +379,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9M4UA5L8Z;
-				INFOPLIST_FILE = AnimatedTextField/Application/Info.plist;
+				INFOPLIST_FILE = "AnimatedTextField/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
